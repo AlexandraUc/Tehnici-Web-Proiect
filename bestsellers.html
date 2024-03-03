@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <link rel = "stylesheet" href = "styles.css" type = "text/css">
+        <title>Bestsellers</title>
+        <link rel = "icon" href = "resurse/reaper.png">
+    </head>
+
+    <body>
+        <header>
+            <a class = "stanga" href = "magazin.html">
+                <img class = "icon" src = "resurse/home.png" alt = "n/a">
+            </a>
+            <a class = "stanga" href = "magazin.html">
+                Acasa
+            </a>
+            <h1>Horror Store</h1>
+            <a class = "dreapta-icon dreapta" href = "cont.html">
+                <img class = "icon" src = "resurse/login.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "cont.html">
+                Login|Utilizator nou
+            </a>
+            <a class = "dreapta-icon dreapta" href = "">
+                <img class = "icon" src = "resurse/cos.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "">
+                Cosul meu
+            </a>
+            <a class = "dreapta-icon dreapta" href = "">
+                <img class = "icon" src = "resurse/wishlist.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "">Wishlist</a>
+        </header>
+
+        <div id = "search">
+            <img src = "resurse/reaper2.png" alt = "">
+                <input type = "text" placeholder = "Cauta carti si filme">
+                <button type = "submit">Cauta</button>
+        </div>
+        	
+        <div id = "categorii">
+            <div class = "dropdown">
+                <button class = "dropbtn">
+                    Sorteaza dupa
+                </button>
+
+                <a class = "categorii-link" href = "bestsellers.html">Bestsellers</a>
+                <a class = "categorii-link" href = "#noutati">Noutati</a>
+                <a class = "categorii-link" href = "">In curand</a>
+                <a class = "categorii-link" href = "#oferte">Oferte</a>
+
+                <div class = "dropdown-content">
+                    <hr>
+                    <ul class ="flex-container">
+                        <li class = "lista lista1">
+                            <span class = "categorie-sortare categorie-subgen">Subgen</span>
+
+                            <ul id = "subgen">
+                                <li><a href="">Body Horror</a></li>
+                                <li><a href = "">Comedy</a></li>
+                                <li><a href = "">Cosmic</a></li>
+                                <li><a href = "">Creature</a></li>
+                                <li><a href = "">Fantasy</a></li>
+                                <li><a href = "">Gothic</a></li>
+                                <li><a href = "">Paranormal</a></li>
+                                <li><a href = "">Psychological</a></li>
+                                <li><a href = "">Science Fiction</a></li>
+                                <li><a href = "">Slasher</a></li>
+                                <li><a href = "">Splatterpunk</a></li>
+                                <li><a href = "">Vampire</a></li>
+                                <li><a href = "">Weird</a></li>
+                                <li><a href = "">Zombie</a></li>
+                            </ul>
+                        </li>
+
+                        <li class = "lista lista2">
+                            <span class = "categorie-sortare categorie-tip-produs">Tip produs</span>
+
+                            <ul id = "tip-produs">
+                                <li><a href = "">Carte</a></li>
+                                <li><a href = "">Film</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class = "lista lista3">
+                            <span class = "categorie-sortare categorie-top-autori">Top autori</span>
+
+                            <ul id = "top-autori">
+                                <li><a href = "">Stephen King</a></li>
+                                <li><a href = "">H.P. Lovecraft</a></li>
+                                <li><a href = "">Shirley Jackson</a></li>
+                                <li><a href = "">Edgar Allan Poe</a></li>
+                                <li><a href = "">Clive Barker</a></li>
+                                <li><a href = "">Dan Simmons</a></li>
+                                <li><a href = "">Michael McDowell</a></li>
+                            </ul>
+                        </li>
+
+                        <li class = "lista lista4">
+                            <span class = "categorie-sortare categorie-top-regizori">Top regizori</span>
+
+                            <ul id = "top-regizori">
+                                <li><a href = "">John Carpenter</a></li>
+                                <li><a href = "">Wes Craven</a></li>
+                                <li><a href = "">James Wan</a></li>
+                                <li><a href = "">Sam Raimi</a></li>
+                                <li><a href = "">George Romero</a></li>
+                                <li><a href = "">David Cronenberg</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id = "bara-bestsellers">
+            <p>Arata 1-15 din x rezultate</p>
+
+            <div>
+                <select id = "ordonare">
+                    <option value = "bestseller" selected = "selected">Bestseller</option>
+                    <option value = "noutati">Noutati</option>
+                    <option value = "crescatori">Pret crescator</option>
+                    <option value = "descrescator">Pret descrescator</option>
+                </select>
+            </div>
+        </div>
+
+        <div id = "filter">
+            <h2>Filtre</h2>
+            <hr>
+
+            <div>
+                <input type = "checkbox">
+                <span>Paperback</span>
+            </div>
+
+            <div>
+                <input type = "checkbox">
+                <span>Hardback</span>
+            </div>
+
+            <div>
+                <input type = "checkbox">
+                <span>Film</span>
+            </div>
+
+            <div>
+                <label for = "selector-pret">Pret</label>
+                <select id = "selector-pret">
+                    <option value = "tot-pret" selected = "selected">Tot</option>
+                    <option value = "<50">0-50 RON</option>
+                    <option value = "50-100">50-100 RON</option>
+                    <option value = ">100">100+ RON</option>
+                </select>
+            </div>
+
+            <div>
+                <label for = "selector-valabilitate">Valabilitate</label>
+                <select id = "selector-valabilitate">
+                    <option value = "tot" selected = "selected">Tot</option>
+                    <option value = "in-stoc">In stoc</option>
+                    <option value = "precomanda">Precomanda</option>
+                </select>
+            </div>
+
+            <button type = "submit">Cauta</button>
+        </div>
+
+        <div class = "sectiune-bestseller">
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/conjuring.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Conjuring</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/yellow.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Yellow Wallpaper and Others</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/rec.jpg" alt = "n/a">
+                    <p class = "nume-produs">REC</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+        </div>
+
+        <div class = "sectiune-bestseller">
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/troop.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Troop</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/nightmare-elm.jpg" alt = "n/a">
+                    <p class = "nume-produs">A Nightmare on Elm Street</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/haunting.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Haunting of Hill House</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+        </div>
+
+        <div class = "sectiune-bestseller">
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/thing.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Thing</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/lovecraft.jpeg" alt = "n/a">
+                    <p class = "nume-produs">The Completes Tales</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/body-snatcher.jpg" alt = "n/a">
+                    <p class = "nume-produs">Invasion of the Body Snatchers</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+        </div>
+
+        <div class = "sectiune-bestseller">
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/teatro.jpg" alt = "n/a">
+                    <p class = "nume-produs">Teatro Grottesco</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/jacob.jpg" alt = "n/a">
+                    <p class = "nume-produs">Jacob's Ladder</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/come.jpg" alt = "n/a">
+                    <p class = "nume-produs">Come Closer</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+        </div>
+
+        <div class = "sectiune-bestseller">
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/babadook.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Babadook</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/last.jpg" alt = "n/a">
+                    <p class = "nume-produs">Last Days</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+
+            <div class = "produse-noutati">
+                <a href = "">
+                    <img src = "resurse/evil.jpg" alt = "n/a">
+                    <p class = "nume-produs">The Evil Dead</p>
+                </a>
+                <p>40</p>
+                <button class = "buton-adauga">Adauga in cos</button>
+            </div>
+        </div>
+
+        <div id = "paginare">
+            <ul>
+                <li><a href = "">1</a></li>
+                <li><a href = "">2</a></li>
+                <li><a href = "">3</a></li>
+                <li><a href = "">4</a></li>
+                <li class = "next-paginare"><a href = "">>></a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <div id = "contul-meu">
+                 <h3>Contul meu</h3>
+                 <ul>
+                     <li><a href = "cont.html">Cont</a></li>
+                     <li><a href = "">Wishlist</a></li>
+                     <li><a href = "">Cos</a></li>
+                     <li><a href = "">Comenzi</a></li>
+                     <li><a href = "">Adrese</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "ajutor">
+                 <h3>Ajutor</h3>
+                 <ul>
+                     <li><a href = "">Ajutor</a></li>
+                     <li><a href = "contact.html">Contactati-ne</a></li>
+                     <li><a href = "">Unde livram</a></li>
+                     <li><a href = "">Anuleaza comanda</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "important">
+                 <h3>Important</h3>
+                 <ul>
+                     <li><a href = "">Termene si conditii</a></li>
+                     <li><a href = "">Politica de confidentialitate</a></li>
+                     <li><a href = "">Termeni legali</a></li>
+                     <li><a href = "">Cookies</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "newsletter">
+                 <h3>Newsletter</h3>
+                 <input type="text" placeholder = "Adresa ta de email">
+                 <button type = "submit">Aboneaza-te</button>
+            </div>
+ 
+            <div id = "adresa">
+                 <img src = "resurse/reaper3.png" alt = "">
+                 <h3>Horror Store</h3>
+                 <p>adresa fictiva</p>
+            </div>
+        </footer>
+
+        <script src = "script.js"></script>
+    </body>
+</html>

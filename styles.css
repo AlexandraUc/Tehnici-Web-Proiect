@@ -1,0 +1,1256 @@
+/* Tot */
+@keyframes slide {
+    0% {visibility: visible;}
+    25% {visibility: hidden;}
+}
+
+body {
+    background-color: rgba(251, 246, 255, 1);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #25161b;
+    height: 3.5rem;                    
+    line-height: 3.5rem;          /* Pentru a centra toate elementele pe verticala */
+    overflow: hidden;
+    width: 100%;
+}
+
+h1 {
+    color: rgba(251, 246, 255, 0.8);
+    display: inline;                   /* Pentru a nu ocupa toata latimea */
+    margin-left: 20%;
+}
+
+header a {
+    color:rgba(251, 246, 255, 0.8);
+    text-decoration: none;
+}
+
+header a:hover {
+    color:#fff;
+    cursor: pointer;
+}
+
+.stanga {
+    float:left;
+    padding-left: 1%;
+}
+
+.dreapta {
+    float: right;
+    margin-right: 0.5%;
+}
+
+header .stanga img {
+    height: 2rem;
+    margin: 30% 50% 0;
+}
+
+header a:nth-of-type(2) {
+    font-size: large;
+    padding-left: 1.5%;
+}
+
+header .dreapta img {
+    height: 2rem;
+    margin-top: 30%;
+}
+
+header .text-dreapta {
+    font-size: large;
+}
+
+header a:nth-of-type(3){
+    padding-right: 2%;
+}
+
+header a:nth-of-type(5){
+    padding-right: 0.5%;
+}
+
+header a:nth-of-type(7){
+    padding-right: 0.5%;
+}
+
+/* Search */
+#search {
+    align-items: center;
+    background-color: #453953;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 4.7rem;
+    padding-left: 8%;
+}
+
+#search img {
+    height: 3.4rem;
+    margin-right: 1rem;
+}
+
+#search input, #search button {
+    border-radius: 10px;         /* Colturi rotunjite */
+    border: none;
+    line-height: 2.3rem;         /* Sa aiba aceeasi inaltime */
+}
+
+#search input {
+    padding-left: 2%;        /* Scrisul sa fie mai la stanga */
+    width: 40%
+}
+
+#search button {
+    background-color: #fff;
+    margin-left: 0.7%;        
+    width: 9rem;            /* Latime constanta */
+}
+
+#search button:hover {
+    background-color: rgba(43, 37, 37, 1);
+    color: rgba(251, 246, 255, 0.8);
+    cursor: pointer;
+}
+
+/* Categorii */
+#categorii {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 1px #453953;
+    height: 2.5rem;
+    line-height: 2.5rem;       /* Pentru a pastra inaltimea elementelor */
+}
+
+#categorii .dropdown {
+    display: flex;            /* Pentru a pastra inaltimea elementelor */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;     /* Aliniaza elementele pe verticala */
+}
+
+#categorii .categorii-link {
+    background-color: rgba(251, 246, 255, 0.8);
+    color: #25161b;
+    font-weight: 500;
+    margin-left: -1%;           /* Pentru a fi lipite de sorteaza dupa */
+    padding: 0 3.5% 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#categorii .categorii-link:hover {
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#categorii .dropbtn {
+    background-color: rgba(251, 246, 255, 0.8);
+    border-radius: 0;
+    border: none;
+    color: #25161b;
+    cursor: pointer;
+    font-size: 0.9rem;
+    height: 2.5rem;
+    width: 15rem;               /* Latime constanta */
+    white-space: nowrap;
+}
+
+#categorii .dropbtn:hover {
+    background-color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+#categorii .dropdown-content {
+    background-color: white;
+    border-left: solid;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: #975a5e;
+    box-shadow: 2px 4px 10px rgba(255, 233, 233, 1);
+    display: none;
+    margin-left: 2%;
+    margin-top: 23.7rem;         /* Fix sub bara */
+    position: absolute;         /* Il scoatem din flex */
+    width: 50rem;               /* Latime constanta */
+    z-index: 1;
+}
+
+#categorii .dropbtn:hover ~ .dropdown-content, #categorii .dropdown-content:hover {
+    display: block;
+}
+
+.dropdown-content .flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Spatierea intre elemente */
+.dropdown-content > .flex-container .lista {
+    margin-top: -1rem;
+}
+
+.dropdown-content .flex-container .lista:nth-of-type(1) {
+    margin-left: 1rem;
+}
+
+.dropdown-content .flex-container .lista:nth-of-type(2) {
+    margin-left: 3rem;
+}
+
+.dropdown-content .flex-container .lista:nth-of-type(4) {
+    margin-left: -3rem;
+}
+
+/* Pentru categoriile de sortare */
+ul li .categorie-sortare {
+    color: rgba(170, 0, 0, 1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.dropdown-content hr {
+    border-color: rgba(170, 0, 0, 1);
+    margin-top: 2.5rem;
+    position: absolute;     /* Pentru a lua latimea container-ului */
+    width: 100%;
+}
+
+/* Elementele din categorii */
+.flex-container li ul li a {
+    color: #25161b;
+    text-decoration: none;
+}
+
+#subgen {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;         /* Pentru a fi centrat textul */
+    margin-left: -65%;          /* Pentru a aduce elementele sub titlu */
+    max-height: 19rem;          /* Dimensiunea containter-ului flex */ 
+    padding-left: 0;
+    width: 220%;                /* Latimea containter-ului, pentru a fi spatiate elementele */
+}
+
+#tip-produs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: -60%;
+    text-align: center;
+}
+
+#top-autori {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: -74%;
+    text-align: center;
+}
+
+#top-regizori {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: -66%;
+    text-align: center;
+}
+
+/* Oferte slide */
+.slideshow {
+    position: relative;
+    height: 25rem;
+}
+
+.slideshow > * {
+    animation: 12s slide infinite;
+    animation-play-state: running;
+    display: block;
+    height: 22rem;
+    left: 10%;
+    margin-top: 2rem;;
+    position: absolute;
+    visibility: hidden;
+    width: 80%;
+}
+
+.slideshow img:nth-of-type(1) {
+    animation-delay: 0s;
+    box-shadow: 2px 2px 15px #25161b;
+}
+
+.slideshow img:nth-of-type(2) {
+    animation-delay: 3s;
+    box-shadow: 2px 2px 20px rgba(68, 3, 3, 1);
+}
+
+.slideshow img:nth-of-type(3) {
+    animation-delay: 6s;
+    box-shadow: 2px 2px 20px rgba(147, 71, 0, 1);
+}
+
+.slideshow img:nth-of-type(4) {
+    animation-delay: 9s;
+    box-shadow: 2px 2px 20px rgba(250, 178, 115, 1);
+}
+
+/* Sectiuni */
+#coloane {
+    display: grid;
+    grid-template-areas:
+    "mic1 mic1 sectiune1 sectiune1 sectiune1"
+    "mic1 mic1 sectiune1 sectiune1 sectiune1"
+    "mic1 mic1 sectiune1 sectiune1 sectiune1"
+    "mic1 mic1 sectiune1 sectiune1 sectiune1"
+    "mic1 mic1 sectiune2 sectiune2 sectiune2"
+    "mic2 mic2 sectiune2 sectiune2 sectiune2"
+    "mic2 mic2 sectiune2 sectiune2 sectiune2"
+    "mic2 mic2 sectiune2 sectiune2 sectiune2"
+    "mic2 mic2 . colectii clasice"
+    "mic2 mic2 . colectii clasice"
+    "mic3 mic3 sectiune3 sectiune3 sectiune3"
+    "mic3 mic3 sectiune3 sectiune3 sectiune3"
+    "mic3 mic3 sectiune3 sectiune3 sectiune3"
+    "mic3 mic3 sectiune3 sectiune3 sectiune3"
+    "mic3 mic3 . body weird"
+    "mic4 mic4 . body weird"
+    "mic4 mic4 sectiune4 sectiune4 sectiune4"
+    "mic4 mic4 sectiune4 sectiune4 sectiune4"
+    "mic4 mic4 sectiune4 sectiune4 sectiune4"
+    "mic4 mic4 sectiune4 sectiune4 sectiune4"
+    "mic5 mic5 . comedy fantasy"
+    "mic5 mic5 . comedy fantasy"
+    "mic5 mic5 sectiune5 sectiune5 sectiune5"
+    "mic5 mic5 sectiune5 sectiune5 sectiune5"
+    "mic5 mic5 sectiune5 sectiune5 sectiune5"
+    ". . sectiune5 sectiune5 sectiune5";
+    margin-top: 1rem;
+}
+
+/* Zone grid */
+.articol-stanga:nth-of-type(1) {
+    grid-area: mic1;
+}
+
+.articol-stanga:nth-of-type(2) {
+    grid-area: mic2;
+}
+
+.articol-stanga:nth-of-type(3) {
+    grid-area: mic3;
+}
+
+.articol-stanga:nth-of-type(4) {
+    grid-area: mic4;
+}
+
+.articol-stanga:nth-of-type(5) {
+    grid-area: mic5;
+}
+
+.slide-sectiune:nth-of-type(1) {
+    grid-area: sectiune1;
+}
+
+.slide-sectiune:nth-of-type(2) {
+    grid-area: sectiune2;
+}
+
+.slide-sectiune:nth-of-type(3) {
+    grid-area: sectiune3;
+}
+
+.slide-sectiune:nth-of-type(4) {
+    grid-area: sectiune4;
+}
+
+.slide-sectiune:nth-of-type(5) {
+    grid-area: sectiune5;
+}
+
+#colectii {
+    grid-area: colectii;
+}
+
+#clasice {
+    grid-area: clasice;
+}
+
+#body-horror {
+    grid-area: body;
+}
+
+#weird {
+    grid-area: weird;
+}
+
+#comedy {
+    grid-area: comedy;
+}
+
+#fantasy {
+    grid-area: fantasy;
+}
+
+.intre-sectiuni:nth-of-type(2n+1) {
+    margin-left: 1rem;
+    margin-right: 6.5rem;
+}
+
+.intre-sectiuni {
+    background-color: black;
+    box-shadow: 1px 1px 10px #25161b;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.intre-sectiuni img {
+    border-color: #25161b;
+    border-style: solid;
+    border-width: 2px;
+    transition: opacity 1s;
+}
+
+.intre-sectiuni span {
+    color: rgba(251, 246, 255, 0.8);
+    font-size: xx-large;
+    position: absolute;
+    top: 43%;
+    transition: color 2s;
+}
+
+.intre-sectiuni:hover img {
+    opacity: 0.4;
+}
+
+.intre-sectiuni:hover span {
+    color: #fff;
+}
+
+#colectii img, #clasice img {
+    height: 99.2%;
+}
+
+#body-horror img, #weird img, #comedy img, #fantasy img {
+    height: 98.5%;
+    width: 99%;
+}
+
+#colectii span {
+    left: 16%;
+}
+
+#clasice span {
+    left: 32%;
+}
+
+#body-horror span {
+    left: 11%;
+}
+
+#weird span {
+    left: 9.5%;
+}
+
+#comedy span {
+    left: 26%;
+}
+
+#fantasy span {
+    left: 8.5%;
+}
+
+.articol-stanga {
+    background-color: #fff;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 10px rgba(43, 37, 37, 0.3);
+    margin: 0 0 1rem 1rem;
+    text-align: center;
+}
+
+.articol-stanga:hover {
+    background-color: rgba(251, 246, 255, 0.8);
+}
+
+.articol-stanga a:nth-of-type(1) img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-style: none;
+    display: block;
+}
+
+.articol-stanga hr {
+    border-style: none;
+    height: 0.2rem;
+    margin: 0;
+}
+
+.articol-stanga:nth-of-type(1) hr {
+    background-color: rgba(214, 20, 6, 1);
+}
+
+.articol-stanga:nth-of-type(2) hr {
+    background-color: aqua;
+}
+
+.articol-stanga:nth-of-type(3) hr {
+    background-color: rgba(251, 246, 255, 1);
+}
+
+.articol-stanga:nth-of-type(4) hr {
+    background-color: darkblue;
+}
+
+.articol-stanga:nth-of-type(5) hr {
+    background-color: rgba(147, 71, 0, 1);
+}
+
+.articol-stanga p {
+    color: #453953;
+    font-weight: 600;
+    margin: 2% 0 5% 0;
+    transition: font-size 2s, color 2s;
+}
+
+.articol-stanga p:hover {
+    color: rgba(170, 0, 0, 1);
+    font-size: large;
+}
+
+.slide-sectiune {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px lightgray;
+    margin: 0 2rem 1.5rem 2rem;
+    padding-bottom: 1rem;
+}
+
+.slide-sectiune h2 {
+    color: #453953;
+    margin-bottom: 0;;
+    margin-left: 2rem;
+    padding-top: 1rem;
+}
+
+.slide-sectiune hr {
+    background-color: #453953;
+    border-style: none;
+    height: 0.1rem;
+    width: 95%;
+}
+
+.slide-sectiune div {
+    margin-top: 1rem;
+    position: relative;         /* Pentru a positiona butoanele */
+    text-align: center;         /* Pentru a centra toate div-urile */
+}
+
+.produse-noutati {
+    display: inline-block;      /* Mai multe unul langa altul */
+    margin: 0 2.4rem 0 1rem;
+    width: 18%;
+}
+
+.produse-noutati a p {
+    color: rgba(43, 37, 37, 1);
+    display: inline-block;      /* Scoate underline-ul */    
+    padding: 5% 0 1.5% 7%;
+    width: 94%;
+}
+
+.produse-noutati a p:hover {
+    color: rgba(170, 0, 0, 1);
+}
+
+.produse-noutati p {
+    color:rgba(255, 50, 35, 1);
+    margin: 0;
+}
+
+.produse-noutati img {
+    height: 110%;
+    width: 110%;
+}
+
+.produse-noutati p:nth-last-child(2):before {
+    color: #25161b;
+    content: "Pret: ";
+}
+
+.produse-noutati p:nth-last-child(2):after {
+    content: " RON";
+}
+
+.produse-noutati .buton-adauga {
+    background-color: rgba(170, 0, 0, 1);
+    border-radius: 10px;
+    border-style: none;
+    font-size: medium;
+    height: 2.5rem;
+    margin-left: 6%;
+    margin-top: 0.8rem;
+    width: 9rem;
+}
+
+.produse-noutati .buton-adauga:hover {
+    background-color: rgba(214, 20, 6, 1);
+    cursor: pointer;
+}
+
+/* Butoanele pentru slide */
+.buton-produse {
+    background-color:rgba(251, 246, 255, 0.8);
+    border-radius: 50%;
+    border-style: none;
+    height: 3rem;
+    position: absolute;          /* Pentru pozitionare */ 
+    top: 34%;
+    width: 3rem;
+    z-index: 1;
+}
+
+.buton-produse:hover {
+    background-color: #975a5e;
+    cursor: pointer;
+}
+
+.buton-produse-stanga {
+    margin-left: 1rem;
+}
+
+.buton-produse-dreapta {
+   margin-left: -4.3rem;
+}
+
+.buton-produse-stanga img {
+    left: 0.9rem;
+    position: absolute;
+    top: 1rem;
+}
+
+.buton-produse-dreapta img {
+    right: 0.9rem;
+    position: absolute;
+    top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #25161b;
+    display: grid;
+    grid-template-areas: "cont ajutor important newsletter adresa";
+    height: 18rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#contul-meu, #ajutor, #important, #newsletter {
+    color: rgba(251, 246, 255, 0.8);
+    margin-top: 0.5rem;
+}
+
+footer ul {
+    margin-left: -2.5rem;
+}
+
+footer ul li {
+    padding-bottom: 1rem;
+}
+
+footer a {
+    color: rgba(248, 248, 248, 1);
+    text-decoration: none;
+}
+
+footer a:hover {
+    font-style: italic;
+}
+
+footer input {
+    border-radius: 10px;
+    border-style: none;
+    display: block;
+    height: 2.3rem;
+    margin: 0 0 0.3rem 6.1rem;
+    padding-left: 2%;
+}
+
+footer button {
+    background-color: rgba(248, 248, 248, 1);
+    border-radius: 10px;
+    border-style: none;
+    display: block;
+    height: 2rem;
+    margin-left: 6rem;
+    width: 10.7rem;
+}
+
+footer button:hover {
+    background-color: #975a5e;
+    color:rgba(248, 248, 248, 1);
+    cursor: pointer;
+}
+
+footer img {
+    margin-top: 1.4rem;
+}
+
+#adresa h3 {
+    color: rgba(248, 248, 248, 1);
+    margin: 0 4% 0 0;
+}
+
+#adresa p {
+    color:rgba(248, 248, 248, 1);
+    margin: 5% 7% 0 0;
+}
+
+/* Zone grid */
+#contul-meu {
+    grid-area: cont;
+}
+
+#ajutor {
+    grid-area: ajutor;
+}
+
+#important {
+    grid-area: important;
+}
+
+#newsletter {
+    grid-area: newsletter;
+}
+
+#adresa {
+    grid-area: adresa;
+}
+
+@media only screen and (max-width: 1192px) {
+    .articol-stanga {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 990px) {
+    .produse-noutati:nth-of-type(4n+4) {
+        display: none;
+    }
+
+    .produse-noutati:nth-of-type(4n+2) {
+        margin-left: 1rem;
+        margin-right: 2.5rem;
+    }
+
+    .produse-noutati {
+        width: 24%;
+    }
+        
+
+    #clasice, #weird, #fantasy {
+        display: none;
+    }
+
+    .buton-produse-stanga {
+        margin-left: 1rem;
+    }
+
+    .buton-produse-dreapta {
+        margin-left: -4.1rem;
+    }
+
+}
+
+@media only screen and (max-width: 930px) {
+    header .text-dreapta {
+        display: none;
+    }
+
+    header .dreapta-icon {
+        margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    header a:nth-of-type(2) {
+        display: none;
+    }
+
+    #categorii .dropdown-content {
+        width: 29rem;
+    }
+
+    .dropdown-content .lista:nth-of-type(2) span {
+        margin-left: -80%;
+    }
+
+    .dropdown-content .lista:nth-of-type(3) span {
+        margin-left: -20%;
+    }
+
+    #subgen, #tip-produs, #top-autori, #top-regizori {
+        visibility: hidden;
+    }
+
+    .categorie-subgen:hover ~ #subgen, .lista1:hover > #subgen {
+        visibility: visible;
+    }
+
+    .categorie-tip-produs:hover ~ #tip-produs, .lista2:hover > #tip-produs {
+        visibility: visible;
+    }
+
+    #tip-produs {
+        margin-left: -200%;
+    }
+
+    .categorie-top-autori:hover ~ #top-autori:hover, .lista3:hover > #top-autori, #top-autori:hover {
+        visibility: visible;
+    }
+
+    #top-autori {
+        margin-left: -110%;
+    }
+
+    .categorie-top-regizori:hover ~ #top-regizori:hover, .lista4:hover > #top-regizori {
+        visibility: visible;
+    }
+
+    .produse-noutati:nth-of-type(3n+3) {
+        display: none;
+    }
+
+    .produse-noutati {
+        width: 27%;
+    }
+
+    .buton-produse-dreapta {
+        margin-left: -4.7rem;
+    }
+
+    footer #newsletter {
+        width: 50%;
+    }
+
+    footer input {
+        margin-left: 0;
+        width: 170%;
+    }
+
+    footer button {
+        margin-left: 0;
+        width: 176%;
+    }
+}
+
+/* Pagina cont.html */
+#login-utilizator-nou {
+    background-color: #fff;
+    box-shadow: 2px 2px 15px 1px #453953;
+    display: grid;
+    grid-gap: 22%;
+    grid-template-areas: "login sign-up";
+    margin: 2rem 2rem 0 2rem;
+    padding: 1rem 0 2rem 12%;
+}
+
+#login-utilizator-nou h2 {
+    color: #453953;
+    margin-bottom: 2rem;
+}
+
+/* Div-urile cu input text */
+#login div:first-of-type, #sign-up div:first-of-type {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#login-utilizator-nou input[type = "text"], #login-utilizator-nou input[type = "password"] {
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1%;
+}
+
+#login input[type = "text"], #login input[type = "password"] {
+    width: 50%;
+}
+
+#sign-up input[type = "text"], #sign-up input[type = "password"] {
+    width: 60%;
+}
+
+#login-utilizator-nou input[type = "checkbox"] {
+    display: inline;                    /* Pentru a fi pe aceeasi linie cu span-ul */
+    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+    transform: scale(1.5);             /* Pentru a mari checkbox-ul */
+}
+
+#sign-up input[type = "checkbox"] {
+    margin-top: 0.5rem;
+}
+
+#login-utilizator-nou button {
+    background-color: rgba(75, 0, 0, 1);
+    border-radius: 10px;
+    border-style: none;
+    color: rgba(251, 246, 255, 0.8);
+    display: block;                 /* Pentru a fi singure pe linie */
+    font-size: medium;
+    height: 3rem;
+    margin: 0.7rem 0 1rem;
+}
+
+#login button {
+    margin-left: 5%;
+    width: 40%;
+}
+
+#sign-up button {
+    margin-left: 7.5%;
+    width: 45%;
+}
+
+#login-utilizator-nou button:hover {
+    background-color: rgba(170, 0, 0, 1);
+    cursor: pointer;
+}
+
+#login a {
+    color: lightslategray;
+    margin-left: 15%;
+    text-decoration: none;
+}
+
+#login a:hover {
+    color: #453953;
+    cursor: pointer;
+}
+
+/* Zone grid */
+#login {
+    grid-area: login;
+    width: 150%;
+}
+
+#sign-up {
+    grid-area: sign-up;
+}
+
+#login input, #sign-up input:focus {
+    outline: none !important;
+}
+
+.invalid::placeholder{
+    color: red;
+}
+
+@media only screen and (max-width: 1150px) {
+    #login-utilizator-nou {
+        grid-gap: 9%;
+    }
+}   
+
+@media only screen and (max-width: 1000px) {
+    #login-utilizator-nou {
+        grid-gap: 6%;
+    }
+
+    #login {
+        width: 120%;
+    }
+}  
+
+@media only screen and (max-width: 750px) {
+    #login-utilizator-nou {
+        grid-template-areas:
+        "login"
+        "sign-up";
+    }
+
+    #sign-up {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Pagina bestsellers.html */
+/* Bara */
+#bara-bestsellers > * {
+    display: inline-block;
+}
+
+#bara-bestsellers {
+    margin: 2rem 0 2rem 23%;
+}
+
+#bara-bestsellers p {
+    margin: 0;
+    padding-left: 5%;
+}
+
+#bara-bestsellers div {
+    float: right;
+    margin-top: -0.4rem;
+    padding-right: 6%;
+}
+
+#ordonare {
+    appearance: none;
+    background-image: url("resurse/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position-x: 85%;
+    background-position-y: 50%;
+    border-radius: 15px;
+    border-color: lightgray;
+    height: 2rem;
+    width: 9rem;
+    padding-left: 5%;
+}
+
+#ordonare:focus {
+    outline: none !important;   /* Sa nu mai aiba bordura */   
+}
+
+/* Filtre */
+#filter {
+    background-color: #fff;
+    box-shadow: 1px 1px 0.3rem rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-left: 2rem;
+    padding: 1rem;
+    position: absolute;
+    width: 18%;
+}
+
+#filter h2 {
+    color: #25161b;
+    margin: 0.5rem 0 1rem;
+}
+
+#filter hr {
+    background-color: #453953;
+    border-style: none;
+    height: 1.5px;
+    margin: 1rem 0 1rem;
+}
+
+#filter div {
+    margin-bottom: 0.5rem;
+}
+
+#filter input[type = "checkbox"] {
+    transform: scale(1.2);
+}
+
+#filter span {
+    font-size: large;
+}
+
+#filter label {
+    display: block;
+    font-size: large;
+    margin-bottom: 1%;
+}
+
+#filter select {
+    font-size: 1.1rem;
+    height: 2rem;
+    padding-left: 3%;
+    width: 100%;
+}
+
+#filter select:focus {
+    outline: none !important;
+}
+
+#filter button {
+    background-color: #25161b;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 2px 2px 10px 1px lightgray;
+    color: rgba(251, 246, 255, 1);
+    font-size: medium;
+    height: 2.5rem;
+    margin: 0.7rem 0;
+    width: 100%;
+}
+
+#filter button:hover {
+    background-color: rgba(75, 0, 0, 1)
+}
+
+/* Sectiuni produse */
+.sectiune-bestseller {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px lightgray;
+    display: inline-block;
+    margin: 0 2rem 2rem 26.5%;
+    padding: 2.5rem 1rem 0 0;
+    text-align: center;
+    width: 70%;
+}
+
+.sectiune-bestseller .produse-noutati {
+    margin: 0;
+    padding-bottom: 2.5rem;
+    width: 25%;
+}
+
+.sectiune-bestseller .produse-noutati:nth-of-type(3n+2) {
+    margin: 0 3rem;
+}
+
+/* Paginare */
+#paginare {
+    display: grid;
+    grid-gap: 20%;
+    grid-template-areas: ". . . lista";
+}
+
+#paginare ul {
+    grid-area: lista;
+}
+
+#paginare ul li {
+    background-color: white;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    margin-right: -0.3rem;
+    padding: 0.4rem 0 0.5rem;
+    text-align: center;
+    width: 2rem;
+}
+
+#paginare ul li a {
+    color: #25161b;
+    cursor: default;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+#paginare ul li:hover {
+    background-color: rgba(251, 246, 255, 1);
+}
+
+#paginare ul .next-paginare a {
+    font-size: 0.8rem;
+}
+
+/* Media query */
+@media only screen and (max-width: 1235px) {
+    .sectiune-bestseller .produse-noutati {
+        width: 24%;
+    }
+
+    .sectiune-bestseller .produse-noutati:nth-of-type(2) {
+        margin: 0 3rem;
+    }
+}
+
+@media only screen and (max-width: 1020px){
+    #filter {
+        display: none;
+    }
+
+    .sectiune-bestseller {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .sectiune-bestseller .produse-noutati:nth-of-type(3) {
+        display: none;
+    }
+
+    .sectiune-bestseller .produse-noutati {
+        width: 32%;
+    }
+
+    .sectiune-bestseller .produse-noutati:nth-of-type(2) {
+       margin-left: 4rem;
+       margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #paginare {
+        grid-gap: 15%;
+    }
+}
+
+/* Pagina contact */
+#contact {
+    background-color: #fff;
+    box-shadow: 2px 2px 15px 1px #453953;
+    margin: 2rem 2rem 0 2rem;
+    padding: 1rem 0 2rem 12%;
+}
+
+#contact div {
+    margin: 1rem 0;
+}
+
+#contact input {
+    height: 2rem;
+    width: 20rem;
+}
+
+#contact select {
+    height: 2.3rem;
+    width: 20.5rem;
+}
+
+#contact label {
+    display: block;
+}
+
+#contact input, #contact textarea:focus, #contact input:after, #contact select:after, #contact select:focus {
+    outline: none !important;
+}
+
+#contact textarea {
+    width: 60%;
+}
+
+#contact button {
+    background-color: rgba(75, 0, 0, 1);
+    border-radius: 10px;
+    border-style: none;
+    color: rgba(251, 246, 255, 0.8);
+    font-size: medium;
+    height: 3rem;
+    width: 10rem;
+}
+
+#contact button:hover {
+    background-color: rgba(170, 0, 0, 1);
+}
+
+@media only screen and (max-width: 1080px) {
+    #contact textarea {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #contact textarea {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #contact textarea {
+        width: 89.5%;
+    }
+}

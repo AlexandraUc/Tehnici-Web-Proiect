@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <link rel = "stylesheet" href = "styles.css" type = "text/css">
+        <title>Contact</title>
+        <link rel = "icon" href = "resurse/reaper.png">
+    </head>
+
+    <body>
+        <header>
+            <a class = "stanga" href = "magazin.html">
+                <img class = "icon" src = "resurse/home.png" alt = "n/a">
+            </a>
+            <a class = "stanga" href = "magazin.html">
+                Acasa
+            </a>
+            <h1>Horror Store</h1>
+            <a class = "dreapta-icon dreapta" href = "cont.html">
+                <img class = "icon" src = "resurse/login.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "cont.html">
+                Login|Utilizator nou
+            </a>
+            <a class = "dreapta-icon dreapta" href = "">
+                <img class = "icon" src = "resurse/cos.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "">
+                Cosul meu
+            </a>
+            <a class = "dreapta-icon dreapta" href = "">
+                <img class = "icon" src = "resurse/wishlist.png" alt = "n/a">
+            </a>
+            <a class = "text-dreapta dreapta" href = "">Wishlist</a>
+        </header>
+
+        <div id = "search">
+            <img src = "resurse/reaper2.png" alt = "">
+                <input type = "text" placeholder = "Cauta carti si filme">
+                <button type = "submit">Cauta</button>
+        </div>
+        	
+        <div id = "categorii">
+            <div class = "dropdown">
+                <button class = "dropbtn">
+                    Sorteaza dupa
+                </button>
+
+                <a class = "categorii-link" href = "bestsellers.html">Bestsellers</a>
+                <a class = "categorii-link" href = "#noutati">Noutati</a>
+                <a class = "categorii-link" href = "">In curand</a>
+                <a class = "categorii-link" href = "#oferte">Oferte</a>
+
+                <div class = "dropdown-content">
+                    <hr>
+                    <ul class ="flex-container">
+                        <li class = "lista lista1">
+                            <span class = "categorie-sortare categorie-subgen">Subgen</span>
+
+                            <ul id = "subgen">
+                                <li><a href="">Body Horror</a></li>
+                                <li><a href = "">Comedy</a></li>
+                                <li><a href = "">Cosmic</a></li>
+                                <li><a href = "">Creature</a></li>
+                                <li><a href = "">Fantasy</a></li>
+                                <li><a href = "">Gothic</a></li>
+                                <li><a href = "">Paranormal</a></li>
+                                <li><a href = "">Psychological</a></li>
+                                <li><a href = "">Science Fiction</a></li>
+                                <li><a href = "">Slasher</a></li>
+                                <li><a href = "">Splatterpunk</a></li>
+                                <li><a href = "">Vampire</a></li>
+                                <li><a href = "">Weird</a></li>
+                                <li><a href = "">Zombie</a></li>
+                            </ul>
+                        </li>
+
+                        <li class = "lista lista2">
+                            <span class = "categorie-sortare categorie-tip-produs">Tip produs</span>
+
+                            <ul id = "tip-produs">
+                                <li><a href = "">Carte</a></li>
+                                <li><a href = "">Film</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class = "lista lista3">
+                            <span class = "categorie-sortare categorie-top-autori">Top autori</span>
+
+                            <ul id = "top-autori">
+                                <li><a href = "">Stephen King</a></li>
+                                <li><a href = "">H.P. Lovecraft</a></li>
+                                <li><a href = "">Shirley Jackson</a></li>
+                                <li><a href = "">Edgar Allan Poe</a></li>
+                                <li><a href = "">Clive Barker</a></li>
+                                <li><a href = "">Dan Simmons</a></li>
+                                <li><a href = "">Michael McDowell</a></li>
+                            </ul>
+                        </li>
+
+                        <li class = "lista lista4">
+                            <span class = "categorie-sortare categorie-top-regizori">Top regizori</span>
+
+                            <ul id = "top-regizori">
+                                <li><a href = "">John Carpenter</a></li>
+                                <li><a href = "">Wes Craven</a></li>
+                                <li><a href = "">James Wan</a></li>
+                                <li><a href = "">Sam Raimi</a></li>
+                                <li><a href = "">George Romero</a></li>
+                                <li><a href = "">David Cronenberg</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <form action = "/output.html" method = "post">
+            <div id = "contact">
+                <div class = "input-text">
+                    <label>Prenume</label>
+                    <input class = "info-contact" name = "prenume" type = "text">
+                </div>
+    
+                <div class = "input-text"> 
+                    <label>Nume</label>
+                    <input class = "info-contact" name = "nume" type = "text">
+                </div>
+    
+                <div class = "input-text" id = "contact-email">
+                    <label>Email</label>
+                    <input class = "info-contact" name = "email" type = "text">
+                </div>
+    
+                <div>
+                    <label for = "selector-motiv">Motiv</label>
+                    <select name = "selector-motiv" id = "selector-motiv">
+                        <option value = "informatii comanda" selected = "selected">Informatii comanda</option>
+                        <option value = "anuleaza comanda">Anuleaza comanda</option>
+                        <option value = "returneaza produs">Returneaza produs</option>
+                        <option value = "produs gresit">Produs gresit</option>
+                        <option value = "produs stricat">Produs stricat</option>
+                        <option value = "altceva">Altceva</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <label for = "mesaj">Mesajul</label>
+                    <textarea name = "mesaj" id = "mesaj" cols = "40" rows = "20"></textarea>
+                </div>
+    
+                <button id = "submit-mesaj" type = "submit">Trimite</button>
+            </div>
+        </form>
+    
+        <footer>
+            <div id = "contul-meu">
+                 <h3>Contul meu</h3>
+                 <ul>
+                     <li><a href = "cont.html">Cont</a></li>
+                     <li><a href = "">Wishlist</a></li>
+                     <li><a href = "">Cos</a></li>
+                     <li><a href = "">Comenzi</a></li>
+                     <li><a href = "">Adrese</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "ajutor">
+                 <h3>Ajutor</h3>
+                 <ul>
+                     <li><a href = "">Ajutor</a></li>
+                     <li><a href = "contact.html">Contactati-ne</a></li>
+                     <li><a href = "">Unde livram</a></li>
+                     <li><a href = "">Anuleaza comanda</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "important">
+                 <h3>Important</h3>
+                 <ul>
+                     <li><a href = "">Termene si conditii</a></li>
+                     <li><a href = "">Politica de confidentialitate</a></li>
+                     <li><a href = "">Termeni legali</a></li>
+                     <li><a href = "">Cookies</a></li>
+                 </ul>
+            </div>
+ 
+            <div id = "newsletter">
+                 <h3>Newsletter</h3>
+                 <input type="text" placeholder = "Adresa ta de email">
+                 <button type = "submit">Aboneaza-te</button>
+            </div>
+ 
+            <div id = "adresa">
+                 <img src = "resurse/reaper3.png" alt = "">
+                 <h3>Horror Store</h3>
+                 <p>adresa fictiva</p>
+            </div>
+        </footer>
+        
+        <script src = "script.js"></script>
+    </body>
+</html>
